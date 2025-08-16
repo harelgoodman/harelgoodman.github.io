@@ -4,26 +4,99 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>לולי נייל — תעודה</title>
+  <meta name="description" content="תעודת הסמכה ואחריות על השירותים של לולי נייל." />
+  <meta property="og:title" content="לולי נייל — תעודה" />
+  <meta property="og:image" content="logo.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap">
   <style>
-    :root{--bg:#fff7f9;--card:#ffffff;--accent:#ec5a7b;--radius:20px}
+    :root{--bg:#fff7f9;--card:#ffffff;--muted:#6b7280;--accent:#ec5a7b;--gold:#f1b84b;--radius:20px;--shadow:0 10px 30px rgba(236,90,123,.18)}
+    html,body{max-width:100%;overflow-x:hidden}
+    *{box-sizing:border-box}
     body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#1f2937}
-    .wrap{max-width:900px;margin:0 auto;padding:24px}
-    .card{background:var(--card);border:1px solid #ffe1ea;border-radius:var(--radius);box-shadow:0 10px 30px rgba(236,90,123,.18);padding:18px}
-    .btn{display:inline-block;margin:6px 0;padding:10px 16px;border-radius:999px;border:1px solid #ffd2de;background:#fff;color:var(--accent);text-decoration:none;font-weight:600}
+    .wrap{max-width:1000px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(255,247,249,.86);backdrop-filter:saturate(1.2) blur(6px);z-index:1000;border-bottom:1px solid #ffe1ea;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand-logo{height:110px}
+    @media(max-width:600px){.brand-logo{height:78px}}
+    .brand-title{font-family:'Playfair Display',serif;font-size:1.6rem;letter-spacing:.02em}
+    .brand-sub{color:#a16207;font-weight:600;letter-spacing:.06em}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;border:1px solid #ffd2de;background:#fff;color:#ec5a7b;text-decoration:none;font-weight:600}
+    .btn-cta{background:linear-gradient(135deg,#f7d98b,#f1b84b);color:#7a4b00;border-color:#f1b84b;box-shadow:0 0 0 3px rgba(241,184,75,.25),0 8px 20px rgba(241,184,75,.35);animation:ctaPulse 2.8s ease-in-out infinite;font-weight:700}
+    @keyframes ctaPulse{0%{box-shadow:0 0 0 0 rgba(241,184,75,.45)}70%{box-shadow:0 0 0 14px rgba(241,184,75,0)}100%{box-shadow:0 0 0 0 rgba(241,184,75,0)}}
+    .card{background:var(--card);border:1px solid #ffe1ea;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:18px 0}
     .img{width:100%;border-radius:14px;border:1px solid #ffe1ea}
+    footer{text-align:center;margin:22px 0;color:var(--muted)}
+    .a11y-fab{position:fixed;inset-inline-end:14px;bottom:14px;padding:12px 16px;border-radius:999px;border:1px solid #ffd2de;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.15);cursor:pointer;z-index:999}
+    :focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <a class="btn" href="./">⬅ חזרה לעמוד הבית</a>
-    <h1 style="font-family:'Playfair Display',serif;margin:8px 0 16px">תעודה</h1>
-    <div class="card">
-      <img src="certificate.png" alt="תעודת הסמכה ממשרד הכלכלה" class="img"/>
-      <p style="margin-top:10px;color:#6b7280">מוסמכת מטעם משרד הכלכלה — איפור יופי מקצועי.</p>
-    </div>
-    <footer style="text-align:center;margin:22px 0;color:#6b7280">© <span id="year"></span> לולי נייל • מס׳ עוסק: 208489344 • <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a></footer>
+    <header>
+      <div class="brand">
+        <img src="logo.png" alt="לוגו לולי נייל" class="brand-logo" />
+        <div>
+          <div class="brand-title">LULI NAILS</div>
+          <div class="brand-sub">NAILS &amp; BEAUTY</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn btn-cta" href="https://lee.co.il/b/oNB94?branch=0">קביעת תור</a>
+        <a class="btn" href="./">עמוד הבית</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h1 style="font-family:'Playfair Display',serif;margin:8px 0 16px">תעודה</h1>
+        <img src="certificate.png" alt="תעודת הסמכה ממשרד הכלכלה" class="img"/>
+        <p style="margin-top:10px;color:#6b7280">מוסמכת מטעם משרד הכלכלה — איפור יופי מקצועי.</p>
+      </section>
+
+      <section class="card">
+        <h2>אחריות</h2>
+        <p>ישנה אחריות על הציפורניים עד כשבועיים מיום התור. במקרים של קילוף/שבר חריג, אנא צרו קשר לתיאום תיקון בהתאם לשיקול דעת הסטודיו.</p>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> לולי נייל • מס׳ עוסק: 208489344 • <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a> • <a href="#" id="manage-consent" style="text-decoration:underline">ניהול הסכמה לעוגיות</a></footer>
   </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <!-- Consent banner (reused behavior) -->
+  <div id="cookie-banner" style="position:fixed; inset-inline:12px; bottom:12px; max-width:760px; margin-inline:auto; z-index:50; background:#ffffff; border:1px solid #ffd2de; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:12px 14px; display:none">
+    <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+      <div style="text-align:right">עמוד זה אינו טוען שירותי צד ג׳, אך ניתן לנהל כאן את הסכמת העוגיות לשאר העמודים.</div>
+      <div style="display:flex; gap:8px">
+        <button id="cookie-decline" class="btn">דחייה</button>
+        <button id="cookie-accept" class="btn btn-cta" style="animation:none">אישור</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="open-a11y-fab" class="a11y-fab" aria-label="אפשרויות נגישות">נגישות</button>
+  <dialog id="a11y" style="max-width:850px; border:1px solid #ffd2de; border-radius:20px; padding:0">
+    <form method="dialog" style="margin:0">
+      <header style="padding:14px 18px; background:#fff7f9; border-bottom:1px solid #ffe1ea; border-radius:20px 20px 0 0"><strong>הצהרת נגישות</strong></header>
+      <div style="padding:16px 18px; max-height:60vh; overflow:auto; text-align:right">
+        <p>האתר שואף לעמוד בתקן 5568 (WCAG 2.0 AA). קיימים כלים להגדלת טקסט וניגודיות גבוהה בעמוד הראשי.</p>
+      </div>
+      <footer style="padding:12px 18px; text-align:left"><button value="cancel" class="btn">סגירה</button></footer>
+    </form>
+  </dialog>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Consent controls (share same keys as הבית)
+    const banner = document.getElementById('cookie-banner');
+    const pref = localStorage.getItem('cookie-pref');
+    function showBanner(){ if(banner) banner.style.display='block'; }
+    if(!pref){ showBanner(); }
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    acceptBtn && (acceptBtn.onclick = ()=>{ localStorage.setItem('cookie-pref','accepted'); banner.style.display='none'; });
+    declineBtn && (declineBtn.onclick = ()=>{ localStorage.setItem('cookie-pref','declined'); banner.style.display='none'; });
+    const manage = document.getElementById('manage-consent');
+    manage && (manage.onclick = (e)=>{ e.preventDefault(); localStorage.removeItem('cookie-pref'); showBanner(); });
+  </script>
 </body>
 </html>
