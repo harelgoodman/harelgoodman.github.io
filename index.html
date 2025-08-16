@@ -36,6 +36,22 @@
     table{width:100%;border-collapse:collapse}
     th,td{padding:10px;border-bottom:1px solid #ffe1ea;text-align:right}
     footer{text-align:center;margin:22px 0;font-size:.9rem;color:#6b7280}
+      /* --- Mobile buttons & accessibility --- */
+    header nav{display:flex; flex-wrap:wrap; gap:10px}
+    .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .btn{display:inline-flex; align-items:center; justify-content:center}
+    @media (max-width:600px){
+      header nav .btn{flex:1 1 calc(50% - 10px)}
+      .btn-row .btn{flex:1 1 calc(50% - 10px)}
+    }
+    /* focus ring for keyboard users */
+    :focus-visible{outline:3px solid #1d4ed8; outline-offset:2px}
+    /* high contrast mode */
+    html.hc body{background:#fff !important; color:#000}
+    html.hc .card{background:#fff !important; border-color:#000 !important; box-shadow:none}
+    html.hc a, html.hc .btn{color:#000 !important; background:#fff !important; border-color:#000 !important; text-decoration:underline}
+    /* a11y floating button */
+    .a11y-fab{position:fixed; inset-inline-end:14px; bottom:14px; padding:12px 16px; border-radius:999px; border:1px solid #ffd2de; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.15); cursor:pointer; z-index:999}
   </style>
   <script type="application/ld+json">
   {
@@ -56,7 +72,8 @@
   </script>
 </head>
 <body>
-  <div class="wrap">
+  <a href="#main" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden" class="skip-link">דלג לתוכן</a>
+  <div class="wrap" id="main">
     <header>
       <img src="logo.png" alt="לוגו לולי נייל" class="logo-img" />
       <nav>
@@ -69,11 +86,13 @@
 
     <section class="card">
       <h2>ברוכות הבאות 🌸</h2>
-      <p>כאן תמצאו את הקישורים הרשמיים: אינסטגרם, קביעת תור, ניווט, שעות ויצירת קשר.</p>
-      <a class="btn" href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a>
-      <a class="btn" href="https://easy.co.il/page/10152948">Easy</a>
-      <a class="btn" href="price.html">מחירון</a>
-      <a class="btn" href="certificate.html">תעודה</a>
+      <p>כאן תמצאו את הקישורים הרשמיים: אינסטגרם, קביעת תור, ניווט ויצירת קשר.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a>
+        <a class="btn" href="https://easy.co.il/page/10152948">Easy</a>
+        <a class="btn" href="price.html">מחירון</a>
+        <a class="btn" href="Certificate.html">תעודה</a>
+      </div>
     </section>
 
     <section class="card">
@@ -97,28 +116,49 @@
 
     <section class="card">
       <h2>מדיניות ביטול</h2>
-      <p>ניתן לבטל או לשנות תור עד 24 שעות לפני המועד שנקבע ללא חיוב. ביטול פחות מ-24 שעות מראש או אי-הגעה יחויבו בתשלום מלא או חלקי, לפי שיקול דעת הסטודיו. קביעת תורים מתבצעת דרך מערכת Lee בהתאם לתנאיה.</p>
+      <p>איחור של יותר מרבע שעה ייחשב כביטול התור. ניתן לבטל או לשנות תור עד 24 שעות לפני המועד שנקבע ללא חיוב. ביטול פחות מ-24 שעות מראש או אי-הגעה יחויבו בתשלום מלא או חלקי, לפי שיקול דעת הסטודיו. ישנה אחריות על הציפורניים עד כשבועיים מיום התור. קביעת תורים מתבצעת דרך מערכת Lee בהתאם לתנאיה.</p>
     </section>
 
     <footer>
       © <span id="year"></span> לולי נייל • מס׳ עוסק: 208489344 • <a href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a> • <a href="https://lee.co.il/b/oNB94?branch=0">Lee</a> • <a href="https://easy.co.il/page/10152948">Easy</a>
     </footer>
     <div style="text-align:center;color:#6b7280;font-size:.9rem;margin-bottom:18px">צור קשר: <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a></div>
-  </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <button id="open-a11y-fab" class="a11y-fab" aria-label="אפשרויות נגישות">נגישות</button>
+  <dialog id="a11y" style="max-width:850px; border:1px solid #ffd2de; border-radius:20px; padding:0">
+    <form method="dialog" style="margin:0">
+      <header style="padding:14px 18px; background:#fff7f9; border-bottom:1px solid #ffe1ea; border-radius:20px 20px 0 0">
+        <strong>הצהרת נגישות וכלי עזר</strong>
+      </header>
+      <div style="padding:16px 18px; max-height:60vh; overflow:auto; text-align:right">
+        <p>האתר שואף לעמוד בתקן 5568 (WCAG 2.0 AA). כלים:</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px">
+          <button id="toggle-hc" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">מצב ניגודיות גבוהה</button>
+          <button id="font-plus" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">+ הגדל טקסט</button>
+          <button id="font-minus" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">− הקטן טקסט</button>
+          <button id="font-reset" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">איפוס</button>
+        </div>
+        <p>לפניות נגישות: <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a></p>
+      </div>
+      <footer style="padding:12px 18px; text-align:left">
+        <button value="cancel" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">סגירה</button>
+      </footer>
+    </form>
+  </dialog>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    // a11y modal + tools
+    const a11y = document.getElementById('a11y');
+    document.getElementById('open-a11y-fab').addEventListener('click', ()=> a11y.showModal());
+    const root = document.documentElement;
+    const hcStored = localStorage.getItem('a11y-hc');
+    if(hcStored==='1'){ root.classList.add('hc'); }
+    const fontStored = parseFloat(localStorage.getItem('a11y-font')||'1');
+    if(fontStored !== 1){ document.body.style.fontSize = (fontStored*100)+'%'; }
+    function setFont(scale){ document.body.style.fontSize = (scale*100)+'%'; localStorage.setItem('a11y-font', String(scale)); }
+    document.getElementById('toggle-hc').onclick = ()=>{ root.classList.toggle('hc'); localStorage.setItem('a11y-hc', root.classList.contains('hc') ? '1' : '0'); };
+    document.getElementById('font-plus').onclick = ()=>{ const cur = parseFloat(localStorage.getItem('a11y-font')||'1'); setFont(Math.min(cur + 0.1, 1.6)); };
+    document.getElementById('font-minus').onclick = ()=>{ const cur = parseFloat(localStorage.getItem('a11y-font')||'1'); setFont(Math.max(cur - 0.1, 0.8)); };
+    document.getElementById('font-reset').onclick = ()=> setFont(1);
+  </script>
 </body>
 </html>
-<script>
-  // Add smooth scroll to top functionality
-  window.addEventListener('scroll', function() {
-    const scrollTopBtn = document.querySelector('.scroll-top');
-    if (window.scrollY > 300) {
-      scrollTopBtn.style.display = 'block';
-    } else {
-      scrollTopBtn.style.display = 'none';
-    }
-  });
-
-  document.querySelector('.scroll-top').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
