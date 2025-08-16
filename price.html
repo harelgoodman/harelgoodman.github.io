@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>לולי נייל — מחירון</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap">
+  <style>
+    :root{--bg:#fff7f9;--card:#ffffff;--accent:#ec5a7b;--radius:20px}
+    body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#1f2937}
+    .wrap{max-width:900px;margin:0 auto;padding:24px}
+    .card{background:var(--card);border:1px solid #ffe1ea;border-radius:var(--radius);box-shadow:0 10px 30px rgba(236,90,123,.18);padding:18px}
+    .btn{display:inline-block;margin:6px 0;padding:10px 16px;border-radius:999px;border:1px solid #ffd2de;background:#fff;color:var(--accent);text-decoration:none;font-weight:600}
+    .img{width:100%;border-radius:14px;border:1px solid #ffe1ea}
+    ul{margin:0;padding-right:18px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="btn" href="./">⬅ חזרה לעמוד הבית</a>
+    <h1 style="font-family:'Playfair Display',serif;margin:8px 0 16px">מחירון</h1>
+    <div class="card" style="margin-bottom:16px">
+      <img src="price.png" alt="מחירון לולי נייל 2025" class="img"/>
+    </div>
+    <div class="card">
+      <h2>טקסט נגיש (חלופה לתמונה)</h2>
+      <ul>
+        <li>מניקור לק ג׳ל — 120 ₪</li>
+        <li>לק ג׳ל רגליים — 100 ₪</li>
+        <li>בניית ג׳ל פוליג׳ל — 230 ₪</li>
+        <li>מילוי — 150 ₪</li>
+        <li>השמת קישוט — 10 ₪</li>
+        <li>תיקון/קישוט תלוי — 5–35 ₪</li>
+        <li>מניקור — 60 ₪</li>
+        <li>הסרת לק — 50 ₪</li>
+      </ul>
+      <p style="margin-top:8px;color:#6b7280">* ג׳ל פשוט ופרנץ׳ ללא תוספת תשלום.</p>
+    </div>
+    <footer style="text-align:center;margin:22px 0;color:#6b7280">© <span id="year"></span> לולי נייל • מס׳ עוסק: 208489344 • <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a></footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
