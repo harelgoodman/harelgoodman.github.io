@@ -73,6 +73,18 @@
     html.hc a, html.hc .btn{color:#000 !important; background:#fff !important; border-color:#000 !important; text-decoration:underline}
     /* a11y floating button */
     .a11y-fab{position:fixed; inset-inline-end:14px; bottom:14px; padding:12px 16px; border-radius:999px; border:1px solid #ffd2de; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.15); cursor:pointer; z-index:999}
+      /* Prevent horizontal scrolling on mobile */
+    html, body{max-width:100%; overflow-x:hidden}
+    *{box-sizing:border-box}
+    img, iframe{max-width:100%; height:auto}
+    /* Skip link (no off‑screen overflow) */
+    .skip-link{position:absolute; inset-inline-start:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{inset-inline-start:12px; top:12px; width:auto; height:auto; padding:10px 14px; background:#fff; color:#000; border-radius:999px; border:2px solid #000; z-index:1000}
+    /* Sticky header */
+    .site-header{position:sticky; top:0; background:rgba(255,247,249,.86); backdrop-filter:saturate(1.2) blur(6px); z-index:1000; border-bottom:1px solid #ffe1ea}
+    .site-header.stuck{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    /* Ensure CTA appears first on all breakpoints */
+    header nav .btn-cta{order:-1}
   </style>
   <script type="application/ld+json">
   {
@@ -93,9 +105,9 @@
   </script>
 </head>
 <body>
-  <a href="#main" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden" class="skip-link">דלג לתוכן</a>
+  <a href="#main" class="skip-link">דלג לתוכן</a>
   <div class="wrap" id="main">
-    <header>
+    <header class="site-header">
       <img src="logo.png" alt="לוגו לולי נייל" class="logo-img" />
       <nav>
         <a class="btn btn-cta" href="https://lee.co.il/b/oNB94?branch=0" aria-label="קביעת תור עכשיו">קביעת תור</a>
@@ -181,6 +193,10 @@
     document.getElementById('font-plus').onclick = ()=>{ const cur = parseFloat(localStorage.getItem('a11y-font')||'1'); setFont(Math.min(cur + 0.1, 1.6)); };
     document.getElementById('font-minus').onclick = ()=>{ const cur = parseFloat(localStorage.getItem('a11y-font')||'1'); setFont(Math.max(cur - 0.1, 0.8)); };
     document.getElementById('font-reset').onclick = ()=> setFont(1);
+    // sticky header on scroll
+    const header = document.querySelector('.site-header');
+    const onScroll = ()=>{ if(window.scrollY>10){ header.classList.add('stuck'); } else { header.classList.remove('stuck'); } };
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   </script>
 </body>
 </html>
