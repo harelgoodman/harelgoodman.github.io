@@ -1,218 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Business Name — Official Site</title>
-  <meta name="description" content="Official landing page for Your Business Name. Contact, hours, location, Instagram, and Lee app links." />
+  <title>לולי נייל — עמוד הבית</title>
+  <meta name="description" content="לולי נייל • סטודיו לציפורניים, איפור ושיער בירושלים. קישורים לאינסטגרם, קביעת תור (Lee), ניווט ויצירת קשר." />
   <!-- Open Graph / Twitter for rich preview -->
-  <meta property="og:title" content="Your Business Name" />
-  <meta property="og:description" content="Contact, hours, location, Instagram, and Lee app links." />
+  <meta property="og:title" content="לולי נייל" />
+  <meta property="og:description" content="סטודיו לציפורניים, איפור ושיער בירושלים. קביעת תור, אינסטגרם, ניווט ויצירת קשר." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com" />
-  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <meta property="og:url" content="https://harelgoodman.github.io/" />
+  <meta property="og:image" content="https://harelgoodman.github.io/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0f172a; /* slate-900 */
-      --card:#111827; /* gray-900 */
-      --muted:#94a3b8; /* slate-400 */
-      --text:#e5e7eb; /* gray-200 */
-      --accent:#22c55e; /* green-500 */
-      --accent-2:#3b82f6; /* blue-500 */
-      --accent-3:#ef4444; /* red-500 */
-      --radius:1.25rem;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      /* Nail studio palette: blush pinks, cream, and gold accents */
+      --bg:#fff7f9;           /* blush-50 */
+      --bg-2:#fde7ef;         /* blush-100 */
+      --card:#ffffff;         /* white */
+      --muted:#6b7280;        /* slate-500 */
+      --text:#1f2937;         /* gray-800 */
+      --accent:#ec5a7b;       /* rose-500 */
+      --accent-2:#f59e0b;     /* amber-500 (gold accent) */
+      --accent-3:#fb7185;     /* rose-400 */
+      --radius:20px;
+      --shadow:0 10px 30px rgba(236,90,123,.18);
     }
     html,body{height:100%}
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 20% -10%, #1e293b, transparent),
-                  radial-gradient(1200px 800px at 120% 10%, #111827, transparent),
-                  var(--bg);
+      margin:0; 
+      font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+      background:
+        radial-gradient(900px 600px at 10% -10%, var(--bg-2), transparent),
+        radial-gradient(900px 600px at 110% 10%, #ffeef4, transparent),
+        var(--bg);
       color:var(--text);
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     .wrap{max-width:1100px; margin:0 auto; padding:28px}
-    header{
-      display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
-      padding:8px 0 20px 0;
-    }
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:8px 0 20px 0;}
     .brand{display:flex; align-items:center; gap:14px}
-    .logo{width:48px; height:48px; border-radius:14px; background:linear-gradient(135deg,#22c55e,#3b82f6); display:inline-grid; place-items:center; box-shadow:var(--shadow)}
-    .logo span{font-weight:800; color:white}
-    .brand h1{font-size:1.4rem; margin:0}
-    .tag{color:var(--muted); font-size:.95rem}
+    .logo{width:56px; height:56px; border-radius:18px; background:conic-gradient(from 210deg, #ffd2de, #fff, #ffd2de); display:inline-grid; place-items:center; box-shadow:var(--shadow); border:1px solid #ffe1ea}
+    .logo span{font-weight:800; color:#ec5a7b; font-family:'Playfair Display', serif; font-size:20px}
+    .brand h1{font-size:1.6rem; margin:0; font-family:'Playfair Display', serif}
+    .tag{color:var(--muted); font-size:.98rem}
 
-    .card{background:rgba(17,24,39,.7); border:1px solid rgba(148,163,184,.18); border-radius:var(--radius); box-shadow:var(--shadow);}
+    .card{background:var(--card); border:1px solid #ffe1ea; border-radius:var(--radius); box-shadow:var(--shadow)}
     .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
     @media (max-width:900px){ .hero{grid-template-columns:1fr} }
     .hero .left{padding:28px}
-    .hero .right{padding:0 0 0 0; display:grid; place-items:center}
+    .hero .right{display:grid; place-items:center; padding:8px}
 
     .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin:18px 0 8px}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:999px; border:1px solid rgba(148,163,184,.25); background:#0b1220; color:var(--text); text-decoration:none; font-weight:600}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:999px; border:1px solid #ffd2de; background:#fff; color:var(--text); text-decoration:none; font-weight:600; box-shadow:0 6px 16px rgba(0,0,0,.05)}
     .btn:hover{transform:translateY(-1px)}
     .btn svg{width:18px; height:18px}
-    .btn.primary{background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(59,130,246,.15)); border-color:rgba(34,197,94,.5)}
+    .btn.primary{background:linear-gradient(135deg, rgba(236,90,123,.12), rgba(245,158,11,.12)); border-color:#f9c6cf}
 
     .grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px}
     @media (max-width:800px){ .grid{grid-template-columns:1fr} }
     .section{padding:18px}
-    .section h2{margin:0 0 10px 0; font-size:1.15rem}
-    .section p, .section li, .section td{color:#cbd5e1}
-    .list{margin:0; padding-left:18px}
+    .section h2{margin:0 0 10px 0; font-size:1.2rem; font-family:'Playfair Display', serif}
+    .section p, .section li, .section td{color:#374151}
+    .list{margin:0; padding-right:18px}
 
     table{width:100%; border-collapse:collapse}
-    th,td{padding:10px 8px; border-bottom:1px solid rgba(148,163,184,.18); text-align:left}
-    th{color:#cbd5e1; font-weight:700}
+    th,td{padding:10px 8px; border-bottom:1px solid #ffe1ea; text-align:right}
+    th{color:#374151; font-weight:700}
 
-    footer{opacity:.9; text-align:center; margin:22px 0; font-size:.9rem; color:var(--muted)}
+    footer{opacity:.95; text-align:center; margin:22px 0; font-size:.92rem; color:#6b7280}
     .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-    .chip{border:1px dashed rgba(148,163,184,.35); padding:6px 10px; border-radius:999px; font-size:.85rem; color:#cbd5e1}
+    .chip{border:1px dashed #f9c6cf; padding:6px 10px; border-radius:999px; font-size:.85rem; color:#374151; background:#fff}
 
     .map{width:100%; height:280px; border:0; border-radius:calc(var(--radius) - 6px)}
 
-    /* RTL-friendly */
-    [dir="rtl"] .wrap{direction:rtl}
+    /* Decorative divider with small sparkles */
+    .divider{height:14px; background: repeating-linear-gradient(90deg, #ffdbe5 0 10px, transparent 10px 20px); border-radius:999px; opacity:.6}
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    @media (max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
+    .gallery img{width:100%; height:220px; object-fit:cover; border-radius:14px; border:1px solid #ffe1ea; box-shadow:var(--shadow)}
   </style>
-  
-  <!-- Schema.org JSON-LD for Google Business Profile compliance -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Your Business Name",
-    "image": "https://example.com/og-image.jpg",
-    "url": "https://example.com",
-    "telephone": "+972-50-000-0000",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Main St",
-      "addressLocality": "Tel Aviv",
-      "postalCode": "61000",
-      "addressCountry": "IL"
-    },
-    "geo": {"@type":"GeoCoordinates", "latitude": 32.0853, "longitude": 34.7818},
-    "openingHoursSpecification": [
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"18:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday"],"opens":"09:00","closes":"13:00"}
-    ],
-    "sameAs": [
-      "https://instagram.com/your-handle",
-      "https://lee.app/your-link" 
-    ]
-  }
-  </script>
 </head>
 <body>
-  <!-- Quick edit guide (remove after customizing):
-    1) Replace text, phone, address, hours.
-    2) Update Instagram/Lee app links below (search for href="#instagram" / href="#lee").
-    3) Replace og:url and og:image with your site.
-    4) Optional: paste your Google Map embed in the iframe src.
-  -->
-
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo" aria-hidden="true"><span>YN</span></div>
+        <div class="logo" aria-hidden="true"><span>LN</span></div>
         <div>
-          <h1>Your Business Name</h1>
-          <div class="tag">Tagline or short description goes here</div>
+          <h1>לולי נייל</h1>
+          <div class="tag">סטודיו לציפורניים, איפור ושיער בירושלים</div>
         </div>
       </div>
       <nav class="cta-row" aria-label="quick links">
-        <a class="btn" href="tel:+972500000000" aria-label="Call now">
-          <!-- phone icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.19a2 2 0 0 1 2.11-.45c.84.29 1.71.5 2.61.62A2 2 0 0 1 22 16.92z"/></svg>
-          Call
-        </a>
-        <a class="btn" href="https://wa.me/972500000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"> 
-          <!-- whatsapp -->
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0012.05 0 12 12 0 000 12a11.93 11.93 0 003.48 8.47A11.86 11.86 0 0012 24a12 12 0 0012-12 11.86 11.86 0 00-3.48-8.52zM12 22a9.9 9.9 0 01-5-1.36l-3.63.95.97-3.54A10 10 0 1112 22zm5.38-6.75c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.65.07a8.17 8.17 0 01-2.4-1.48 9 9 0 01-1.64-2.01c-.17-.3 0-.47.13-.62s.3-.35.45-.52a2 2 0 00.3-.5.55.55 0 00-.03-.52c-.08-.15-.67-1.62-.92-2.22s-.5-.5-.67-.5h-.57a1.1 1.1 0 00-.8.37 3.38 3.38 0 00-1.05 2.5 5.86 5.86 0 001.22 3.11 13.34 13.34 0 004.55 4.21 15.54 15.54 0 002.91 1.07 7 7 0 003.22.2 2.7 2.7 0 001.77-1.25 2.22 2.22 0 00.15-1.25c-.05-.1-.25-.17-.55-.32z"/></svg>
-          WhatsApp
-        </a>
+        <a class="btn" href="tel:+972525101177">התקשרו</a>
+        <a class="btn" href="https://wa.me/972525101177" target="_blank" rel="noopener">ווטסאפ</a>
       </nav>
     </header>
 
     <section class="hero card">
       <div class="left">
-        <h2 style="margin:0 0 8px 0; font-size:1.8rem">Welcome! 👋</h2>
-        <p style="margin:0 0 14px 0; color:#cbd5e1">We provide excellent services for our community. Find our links, hours, and location below. Save this page to your Google Business Profile as your website.</p>
+        <h2 style="margin:0 0 8px 0; font-size:1.8rem">ברוכים הבאים! 💅</h2>
+        <p>כאן תמצאו את הקישורים הרשמיים: אינסטגרם, קביעת תור (Lee), ניווט, שעות ויצירת קשר.</p>
         <div class="cta-row">
-          <a class="btn primary" id="instagram" href="#instagram" target="_blank" rel="noopener me" aria-label="Open Instagram profile">
-            <!-- instagram icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
-            Instagram
-          </a>
-          <a class="btn" id="lee" href="#lee" target="_blank" rel="noopener" aria-label="Open Lee app link">
-            <!-- link icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            Lee app
-          </a>
-          <a class="btn" href="https://maps.google.com/?q=Your+Business+Name+Tel+Aviv" target="_blank" rel="noopener" aria-label="Directions on Google Maps">
-            <!-- map pin -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Directions
-          </a>
+          <a class="btn primary" href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0" target="_blank">אינסטגרם</a>
+          <a class="btn" href="https://lee.co.il/b/oNB94?branch=0" target="_blank">קביעת תור</a>
+          <a class="btn" href="https://maps.google.com/?q=%D7%93%D7%95%D7%93+%D7%A6%D7%91%D7%99+%D7%A4%D7%A0%D7%A7%D7%A1,+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D" target="_blank">ניווט</a>
         </div>
         <div class="chips">
-          <span class="chip">✓ Mobile‑friendly</span>
-          <span class="chip">✓ Fast & SEO‑ready</span>
-          <span class="chip">✓ GBP compliant</span>
+          <span class="chip">ציפורניים מעוצבות</span>
+          <span class="chip">איפור מקצועי</span>
+          <span class="chip">עיצוב שיער</span>
         </div>
       </div>
       <div class="right">
-        <!-- Optional illustrative image -->
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=60" alt="Business preview" style="width:100%; height:auto; border-radius:var(--radius); border:1px solid rgba(148,163,184,.18)"/>
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=60" alt="עיצובי ציפורניים" style="width:100%; height:auto; border-radius:var(--radius); border:1px solid #ffe1ea"/>
       </div>
     </section>
 
     <div class="grid">
       <section class="section card">
-        <h2>About</h2>
-        <p>Write a short, clear description of what you offer. Mention your unique value and service area.</p>
-        <h2 style="margin-top:16px">Services</h2>
+        <h2>אודות</h2>
+        <p>סטודיו בוטיק לשירותי ציפורניים, איפור ושיער. יחס אישי, חומרים איכותיים ותוצאות מדויקות.</p>
+        <h2 style="margin-top:16px">שירותים</h2>
         <ul class="list">
-          <li>Service A — quick description</li>
-          <li>Service B — quick description</li>
-          <li>Service C — quick description</li>
+          <li>מניקור / בניית ג'ל</li>
+          <li>איפור ערב / כלה</li>
+          <li>תסרוקות ושיער</li>
         </ul>
       </section>
 
       <section class="section card">
-        <h2>Hours</h2>
-        <table aria-label="Business hours">
+        <h2>שעות פעילות</h2>
+        <table>
           <tbody>
-            <tr><th scope="row">Mon–Thu</th><td>09:00 – 18:00</td></tr>
-            <tr><th scope="row">Fri</th><td>09:00 – 13:00</td></tr>
-            <tr><th scope="row">Sat</th><td>Closed</td></tr>
-            <tr><th scope="row">Sun</th><td>Closed</td></tr>
+            <tr><th>א׳–ה׳</th><td>09:00 – 18:00</td></tr>
+            <tr><th>ו׳</th><td>09:00 – 13:00</td></tr>
+            <tr><th>ש׳</th><td>סגור</td></tr>
           </tbody>
         </table>
         <div class="cta-row" style="margin-top:14px">
-          <a class="btn" href="mailto:info@example.com" aria-label="Send email">
-            <!-- mail -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
-            info@example.com
-          </a>
-          <a class="btn" href="/yourcard.vcf" aria-label="Download contact card">Add to Contacts</a>
+          <a class="btn" href="tel:+972525101177">052‑5101177</a>
+          <a class="btn" href="https://easy.co.il/page/10152948?utm_campaign=bizpage_share&utm_source=native_share&utm_medium=direct_link" target="_blank">Easy</a>
         </div>
       </section>
     </div>
+    <div class="divider" aria-hidden="true"></div>
 
     <section class="section card" style="margin-top:18px">
-      <h2>Find Us</h2>
-      <p>123 Main St, Tel Aviv, Israel</p>
-      <!-- Replace with your live Google Map embed code (Share ▶ Embed a map) -->
-      <iframe class="map" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.291078764638!2d34.774!3d32.080!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzQ4LjAiTiAzNMKwNDYnMjYuNCJF!5e0!3m2!1sen!2sil!4v0000000000000"></iframe>
+      <h2>גלריה</h2>
+      <div class="gallery" aria-label="דוגמאות עבודות">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e81b2?auto=format&fit=crop&w=600&q=60" alt="נייל ארט עדין"/>
+        <img src="https://images.unsplash.com/photo-1512205318103-1b1f48b9cc39?auto=format&fit=crop&w=600&q=60" alt="מניקור ורוד"/>
+        <img src="https://images.unsplash.com/photo-1582034986517-5e04c5a6b1a1?auto=format&fit=crop&w=600&q=60" alt="גליטר זהוב"/>
+      </div>
+    </section>
+
+    <section class="section card" style="margin-top:18px">
+      <h2>איך מגיעים</h2>
+      <p>דוד צבי פנקס, ירושלים</p>
+      <iframe class="map" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=%D7%93%D7%95%D7%93+%D7%A6%D7%91%D7%99+%D7%A4%D7%A0%D7%A7%D7%A1,+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D&output=embed"></iframe>
     </section>
 
     <footer>
-      © <span id="year"></span> Your Business Name • <a href="#instagram" style="color:#a5b4fc">Instagram</a> • <a href="#lee" style="color:#a5b4fc">Lee app</a>
+      © <span id="year"></span> לולי נייל • <a href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a> • <a href="https://lee.co.il/b/oNB94?branch=0">Lee</a> • <a href="https://easy.co.il/page/10152948?utm_campaign=bizpage_share&utm_source=native_share&utm_medium=direct_link">Easy</a>
     </footer>
   </div>
 
