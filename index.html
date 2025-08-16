@@ -83,10 +83,20 @@
     .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
     @media (max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
     .gallery img{width:100%; height:220px; object-fit:cover; border-radius:14px; border:1px solid #ffe1ea; box-shadow:var(--shadow)}
+    /* Accessibility helpers */
+    .skip-link{position:absolute; inset-inline-start:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{inset-inline-start:12px; top:12px; width:auto; height:auto; padding:10px 14px; background:#fff; color:#000; border-radius:999px; border:2px solid #000; z-index:1000}
+    :focus-visible{outline:3px solid #1d4ed8; outline-offset:2px}
+    html.hc body{background:#ffffff !important; color:#000}
+    html.hc .card{background:#fff !important; border-color:#000 !important; box-shadow:none}
+    html.hc a, html.hc .btn{color:#000 !important; background:#fff !important; border-color:#000 !important; text-decoration:underline}
+    html.hc .chip{border-color:#000 !important}
+    .a11y-fab{position:fixed; inset-inline-end:14px; bottom:14px; padding:12px 16px; border-radius:999px; border:1px solid #ffd2de; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.12); cursor:pointer}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+  <div class="wrap" id="main">
     <header>
       <div class="brand">
         <div class="logo" aria-hidden="true"><span>LN</span></div>
@@ -98,6 +108,7 @@
       <nav class="cta-row" aria-label="quick links">
         <a class="btn" href="tel:+972525101177">התקשרו</a>
         <a class="btn" href="https://wa.me/972525101177" target="_blank" rel="noopener">ווטסאפ</a>
+      <a class="btn" href="#" id="open-a11y-header" aria-label="הגדרות נגישות">נגישות</a>
       </nav>
     </header>
 
@@ -170,8 +181,139 @@
     </footer>
   </div>
 
+  <!-- Compliance footer links -->
+  <div style="text-align:center; font-size:.9rem; color:#6b7280; margin-bottom:18px">
+    <span>לולי נייל • דוד צבי פנקס, ירושלים • 052‑5101177 • ח.פ./עוסק: <strong>__מזהה-עסק__</strong></span>
+    <br />
+    <a href="#" id="open-privacy" style="color:#6b7280; text-decoration:underline">מדיניות פרטיות</a>
+    · <a href="#" id="open-terms" style="color:#6b7280; text-decoration:underline">תנאי שימוש</a>
+    · <a href="#" id="open-a11y" style="color:#6b7280; text-decoration:underline">הצהרת נגישות</a>
+  </div>
+
+  <!-- Simple modals: Privacy / Terms / Accessibility -->
+  <dialog id="privacy" style="max-width:850px; border:1px solid #ffd2de; border-radius:20px; padding:0">
+    <form method="dialog" style="margin:0">
+      <header style="padding:14px 18px; background:#fff7f9; border-bottom:1px solid #ffe1ea; border-radius:20px 20px 0 0">
+        <strong>מדיניות פרטיות</strong>
+      </header>
+      <div style="padding:16px 18px; max-height:60vh; overflow:auto; text-align:right">
+        <p>אנו מכבדים את פרטיותך בהתאם לחוק הגנת הפרטיות, תשמ"א‑1981 ולדין החל. דף זה אינו מבצע רכישות; קביעת תורים מתבצעת דרך מערכת Lee (קישור חיצוני), הכפופה למדיניות הפרטיות שלה.</p>
+        <ul style="padding-right:18px; margin:0">
+          <li><strong>איזה מידע נאסף:</strong> פרטי קשר שתבחרו למסור (טלפון/ווטסאפ/אימייל), נתוני שימוש אנונימיים (כמו כתובת IP ודפי צפייה) ונתוני הזמנה ב‑Lee כפי שמועברים לנו בדוחות.</li>
+          <li><strong>מטרות העיבוד:</strong> מענה לפניות, תיאום תורים, שיפור השירות, אבטחה ותיעוד.</li>
+          <li><strong>מסירת מידע לצדדים שלישיים:</strong> ספקי אירוח (GitHub Pages/ספק שווה ערך), Google Maps, ופלטפורמת Lee. מידע יימסר ככל שנדרש לשירות או לפי דין.</li>
+          <li><strong>עוגיות (Cookies):</strong> האתר משתמש בעוגיות פונקציונליות ואנליטיות רק בהסכמתכם. ניתן לנהל העדפות במודעת העוגיות.</li>
+          <li><strong>אבטחה ושמירה:</strong> אנו נוקטים באמצעים סבירים להגן על המידע ושומרים אותו רק כל עוד נדרש למטרות המוצהרות.</li>
+          <li><strong>זכויותיך:</strong> זכות עיון/תיקון/מחיקה בהתאם לדין. לפניות: 052‑5101177 או באימייל <a href="mailto:privacy@example.com">privacy@example.com</a>.</li>
+        </ul>
+      </div>
+      <footer style="padding:12px 18px; text-align:left">
+        <button value="cancel" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">סגירה</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog id="terms" style="max-width:850px; border:1px solid #ffd2de; border-radius:20px; padding:0">
+    <form method="dialog" style="margin:0">
+      <header style="padding:14px 18px; background:#fff7f9; border-bottom:1px solid #ffe1ea; border-radius:20px 20px 0 0">
+        <strong>תנאי שימוש</strong>
+      </header>
+      <div style="padding:16px 18px; max-height:60vh; overflow:auto; text-align:right">
+        <ul style="padding-right:18px; margin:0">
+          <li>השימוש באתר הוא כפי שהוא (AS‑IS). אין באתר מכירה מקוונת; קביעת תורים נעשית דרך Lee בכפוף לתנאיה.</li>
+          <li>ביטול/שינוי תור: ניתן עד <strong>24 שעות</strong> לפני המועד, אלא אם צוין אחרת בעת ההזמנה ב‑Lee.</li>
+          <li>תכנים ותמונות מיועדים להמחשה. יתכנו הבדלים בין תמונות לתוצאה בפועל.</li>
+          <li>הקישורים החיצוניים (Instagram, Lee, Easy, Google Maps) באחריות הספקים הרלוונטיים.</li>
+          <li>שיפוט וסמכות: לבתי המשפט במחוז ירושלים, בכפוף לדין הישראלי.</li>
+        </ul>
+      </div>
+      <footer style="padding:12px 18px; text-align:left">
+        <button value="cancel" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">סגירה</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog id="a11y" style="max-width:850px; border:1px solid #ffd2de; border-radius:20px; padding:0">
+    <form method="dialog" style="margin:0">
+      <header style="padding:14px 18px; background:#fff7f9; border-bottom:1px solid #ffe1ea; border-radius:20px 20px 0 0">
+        <strong>הצהרת נגישות</strong>
+      </header>
+      <div style="padding:16px 18px; max-height:60vh; overflow:auto; text-align:right">
+        <p>האתר שואף לעמוד בדרישות תקן ישראלי 5568 (על בסיס WCAG 2.0 AA). בוצעו התאמות הכוללות ניווט מקלדת, תיאורי alt לתמונות, ניגודיות מספקת ותאימות לנייד.</p>
+        <p>כלי עזר:</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px">
+          <button id="toggle-hc" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">מצב ניגודיות גבוהה</button>
+          <button id="font-plus" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">+ הגדל טקסט</button>
+          <button id="font-minus" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">− הקטן טקסט</button>
+          <button id="font-reset" type="button" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">איפוס</button>
+        </div>
+        <p>נתקלתם בקושי נגישות? פנו ב‑WhatsApp 052‑5101177 או במייל accessibility@example.com. נטפל בפנייה ונשיב בתוך 7 ימי עבודה.</p>
+      </div>
+      <footer style="padding:12px 18px; text-align:left">
+        <button value="cancel" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">סגירה</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner" style="position:fixed; inset-inline:12px; bottom:12px; max-width:760px; margin-inline:auto; z-index:50; background:#ffffff; border:1px solid #ffd2de; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:12px 14px; display:none">
+    <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+      <div style="text-align:right">
+        אנחנו משתמשים בעוגיות לשיפור חוויית הגלישה ולמדידה אנונימית. ניתן לשנות העדפות בכל עת. קראו את <a href="#" id="cookie-privacy" style="text-decoration:underline">מדיניות הפרטיות</a>.
+      </div>
+      <div style="display:flex; gap:8px">
+        <button id="cookie-decline" style="padding:8px 14px; border:1px solid #ffd2de; background:#fff; border-radius:999px">דחייה</button>
+        <button id="cookie-accept" style="padding:8px 14px; border:0; background:#ec5a7b; color:#fff; border-radius:999px">אישור</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="open-a11y-fab" class="a11y-fab" aria-label="אפשרויות נגישות">נגישות</button>
+
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modals
+    const privacy = document.getElementById('privacy');
+    const terms = document.getElementById('terms');
+    const a11y = document.getElementById('a11y');
+    const openA11yFooter = document.getElementById('open-a11y');
+    const openA11yHeader = document.getElementById('open-a11y-header');
+    const openA11yFab = document.getElementById('open-a11y-fab');
+    openA11yFooter && openA11yFooter.addEventListener('click', e=>{e.preventDefault(); a11y.showModal();});
+    openA11yHeader && openA11yHeader.addEventListener('click', e=>{e.preventDefault(); a11y.showModal();});
+    openA11yFab && openA11yFab.addEventListener('click', ()=> a11y.showModal());
+
+    document.getElementById('open-privacy').addEventListener('click', e=>{e.preventDefault(); privacy.showModal();});
+    document.getElementById('open-terms').addEventListener('click', e=>{e.preventDefault(); terms.showModal();});
+    document.getElementById('cookie-privacy').addEventListener('click', e=>{e.preventDefault(); privacy.showModal();});
+
+    // Cookie preferences
+    const banner = document.getElementById('cookie-banner');
+    const pref = localStorage.getItem('cookie-pref');
+    if(!pref){ banner.style.display = 'block'; }
+    document.getElementById('cookie-accept').onclick = ()=>{ localStorage.setItem('cookie-pref','accepted'); banner.style.display='none'; };
+    document.getElementById('cookie-decline').onclick = ()=>{ localStorage.setItem('cookie-pref','declined'); banner.style.display='none'; };
+
+    // Accessibility toggles
+    const root = document.documentElement;
+    const hcStored = localStorage.getItem('a11y-hc');
+    if(hcStored==='1'){ root.classList.add('hc'); }
+    const fontStored = parseFloat(localStorage.getItem('a11y-font')||'1');
+    if(fontStored !== 1){ document.body.style.fontSize = (fontStored*100)+'%'; }
+
+    function setFont(scale){ document.body.style.fontSize = (scale*100)+'%'; localStorage.setItem('a11y-font', String(scale)); }
+
+    const toggleHC = document.getElementById('toggle-hc');
+    const plus = document.getElementById('font-plus');
+    const minus = document.getElementById('font-minus');
+    const reset = document.getElementById('font-reset');
+
+    toggleHC && (toggleHC.onclick = ()=>{ root.classList.toggle('hc'); localStorage.setItem('a11y-hc', root.classList.contains('hc') ? '1' : '0'); });
+    plus && (plus.onclick = ()=>{ const cur = parseFloat(localStorage.getItem('a11y-font')||'1'); setFont(Math.min(cur + 0.1, 1.6)); });
+    minus && (minus.onclick = ()=>{ const cur = parseFloat(localStorage.getItem('a11y-font')||'1'); setFont(Math.max(cur - 0.1, 0.8)); });
+    reset && (reset.onclick = ()=>{ setFont(1); });
   </script>
 </body>
 </html>
