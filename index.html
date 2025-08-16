@@ -29,7 +29,7 @@
     .wrap{max-width:1100px;margin:0 auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 0 20px 0;}
     .logo-img{height:72px}
-    .card{background:var(--card);border:1px solid #ffe1ea;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .card{background:var(--card);border:1px solid #ffe1ea;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
     .btn{padding:10px 16px;border-radius:999px;border:1px solid #ffd2de;background:#fff;color:var(--accent);text-decoration:none;font-weight:600}
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
     .gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px;border:1px solid #ffe1ea;box-shadow:var(--shadow)}
@@ -62,35 +62,18 @@
       <nav>
         <a class="btn" href="tel:+972525101177">התקשרי עכשיו</a>
         <a class="btn" href="https://wa.me/972525101177">וואטסאפ</a>
+        <a class="btn" href="mailto:lolafriat1177@gmail.com">מייל</a>
         <a class="btn" href="https://lee.co.il/b/oNB94?branch=0">קביעת תור</a>
       </nav>
     </header>
 
     <section class="card">
-      <h2>ברוכים הבאים! 👋</h2>
+      <h2>ברוכות הבאות 🌸</h2>
       <p>כאן תמצאו את הקישורים הרשמיים: אינסטגרם, קביעת תור, ניווט, שעות ויצירת קשר.</p>
       <a class="btn" href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a>
       <a class="btn" href="https://easy.co.il/page/10152948">Easy</a>
-    </section>
-
-    <section class="card">
-      <h2>שעות פעילות</h2>
-      <table>
-        <tr><th>א׳–ה׳</th><td>09:00 – 18:00</td></tr>
-        <tr><th>ו׳</th><td>09:00 – 13:00</td></tr>
-        <tr><th>ש׳</th><td>סגור</td></tr>
-      </table>
-    </section>
-
-    <section class="card">
-      <h2>אודות</h2>
-      <p>סטודיו בוטיק לשירותי ציפורניים, איפור ושיער בירושלים. יחס אישי, חומרים איכותיים ותוצאות מדויקות. מוסמכת מטעם משרד הכלכלה (ראו תעודה).</p>
-      <img src="certificate.png" alt="תעודת הסמכה" style="width:100%;max-width:500px;border-radius:14px;margin-top:12px"/>
-    </section>
-
-    <section class="card">
-      <h2>מחירון 2025</h2>
-      <img src="price.png" alt="מחירון לולי נייל 2025" style="width:100%;max-width:600px;border-radius:14px"/>
+      <a class="btn" href="price.html">מחירון</a>
+      <a class="btn" href="certificate.html">תעודה</a>
     </section>
 
     <section class="card">
@@ -100,6 +83,11 @@
         <img src="nail2.png" alt="עיצוב ציפורניים 2"/>
         <img src="nail3.png" alt="עיצוב ציפורניים 3"/>
       </div>
+    </section>
+
+    <section class="card">
+      <h2>אודות</h2>
+      <p>סטודיו בוטיק לשירותי ציפורניים, איפור ושיער בירושלים. יחס אישי, חומרים איכותיים ותוצאות מדויקות. מוסמכת מטעם משרד הכלכלה (ראו תעודה בקישור).</p>
     </section>
 
     <section class="card">
@@ -115,17 +103,22 @@
     <footer>
       © <span id="year"></span> לולי נייל • מס׳ עוסק: 208489344 • <a href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a> • <a href="https://lee.co.il/b/oNB94?branch=0">Lee</a> • <a href="https://easy.co.il/page/10152948">Easy</a>
     </footer>
+    <div style="text-align:center;color:#6b7280;font-size:.9rem;margin-bottom:18px">צור קשר: <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a></div>
   </div>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
 <script>
-  // Add smooth scroll to anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
+  // Add smooth scroll to top functionality
+  window.addEventListener('scroll', function() {
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    if (window.scrollY > 300) {
+      scrollTopBtn.style.display = 'block';
+    } else {
+      scrollTopBtn.style.display = 'none';
+    }
+  });
+
+  document.querySelector('.scroll-top').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
