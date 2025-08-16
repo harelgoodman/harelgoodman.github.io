@@ -52,6 +52,27 @@
     html.hc a, html.hc .btn{color:#000 !important; background:#fff !important; border-color:#000 !important; text-decoration:underline}
     /* a11y floating button */
     .a11y-fab{position:fixed; inset-inline-end:14px; bottom:14px; padding:12px 16px; border-radius:999px; border:1px solid #ffd2de; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.15); cursor:pointer; z-index:999}
+      /* --- Mobile buttons & accessibility --- */
+    header nav{display:flex; flex-wrap:wrap; gap:10px}
+    .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .btn{display:inline-flex; align-items:center; justify-content:center}
+    @media (max-width:600px){
+      header nav .btn{flex:1 1 calc(50% - 10px)}
+      .btn-row .btn{flex:1 1 calc(50% - 10px)}
+    }
+    /* CTA (קביעת תור) — זהב + זוהר + pulse */
+    .btn-cta{background:linear-gradient(135deg,#f7d98b,#f1b84b); color:#7a4b00; border-color:#f1b84b; box-shadow:0 0 0 3px rgba(241,184,75,.25), 0 8px 20px rgba(241,184,75,.35); animation:ctaPulse 2.8s ease-in-out infinite; font-weight:700}
+    .btn-cta:hover{transform:translateY(-1px) scale(1.01)}
+    @keyframes ctaPulse{0%{box-shadow:0 0 0 0 rgba(241,184,75,.45)}70%{box-shadow:0 0 0 14px rgba(241,184,75,0)}100%{box-shadow:0 0 0 0 rgba(241,184,75,0)}}
+    @media (max-width:600px){ header nav .btn-cta{order:-1; flex:1 1 100%} }
+    /* focus ring for keyboard users */
+    :focus-visible{outline:3px solid #1d4ed8; outline-offset:2px}
+    /* high contrast mode */
+    html.hc body{background:#fff !important; color:#000}
+    html.hc .card{background:#fff !important; border-color:#000 !important; box-shadow:none}
+    html.hc a, html.hc .btn{color:#000 !important; background:#fff !important; border-color:#000 !important; text-decoration:underline}
+    /* a11y floating button */
+    .a11y-fab{position:fixed; inset-inline-end:14px; bottom:14px; padding:12px 16px; border-radius:999px; border:1px solid #ffd2de; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.15); cursor:pointer; z-index:999}
   </style>
   <script type="application/ld+json">
   {
@@ -77,10 +98,10 @@
     <header>
       <img src="logo.png" alt="לוגו לולי נייל" class="logo-img" />
       <nav>
+        <a class="btn btn-cta" href="https://lee.co.il/b/oNB94?branch=0" aria-label="קביעת תור עכשיו">קביעת תור</a>
         <a class="btn" href="tel:+972525101177">התקשרי עכשיו</a>
         <a class="btn" href="https://wa.me/972525101177">וואטסאפ</a>
         <a class="btn" href="mailto:lolafriat1177@gmail.com">מייל</a>
-        <a class="btn" href="https://lee.co.il/b/oNB94?branch=0">קביעת תור</a>
       </nav>
     </header>
 
@@ -88,6 +109,7 @@
       <h2>ברוכות הבאות 🌸</h2>
       <p>כאן תמצאו את הקישורים הרשמיים: אינסטגרם, קביעת תור, ניווט ויצירת קשר.</p>
       <div class="btn-row">
+        <a class="btn btn-cta" href="https://lee.co.il/b/oNB94?branch=0" aria-label="קביעת תור עכשיו">קביעת תור</a>
         <a class="btn" href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a>
         <a class="btn" href="https://easy.co.il/page/10152948">Easy</a>
         <a class="btn" href="price.html">מחירון</a>
