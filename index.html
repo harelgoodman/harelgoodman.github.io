@@ -28,7 +28,7 @@
     body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text)}
     .wrap{max-width:1100px;margin:0 auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 0 20px 0;}
-    .logo-img{height:72px}
+    .logo-img{height:72px} .brand{display:flex;align-items:center;gap:14px} .brand-logo{height:110px} @media(max-width:600px){.brand-logo{height:78px}} .brand-title{font-family:'Playfair Display',serif;font-size:1.6rem;letter-spacing:.02em} .brand-sub{color:#a16207;font-weight:600;letter-spacing:.06em}
     .card{background:var(--card);border:1px solid #ffe1ea;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
     .btn{padding:10px 16px;border-radius:999px;border:1px solid #ffd2de;background:#fff;color:var(--accent);text-decoration:none;font-weight:600}
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
@@ -108,12 +108,19 @@
   <a href="#main" class="skip-link">דלג לתוכן</a>
   <div class="wrap" id="main">
     <header class="site-header">
-      <img src="logo.png" alt="לוגו לולי נייל" class="logo-img" />
+      <div class="brand">
+        <img src="logo.png" alt="לוגו לולי נייל" class="brand-logo" />
+        <div>
+          <div class="brand-title">LULI NAILS</div>
+          <div class="brand-sub">NAILS &amp; BEAUTY</div>
+        </div>
+      </div>
       <nav>
         <a class="btn btn-cta" href="https://lee.co.il/b/oNB94?branch=0" aria-label="קביעת תור עכשיו">קביעת תור</a>
         <a class="btn" href="tel:+972525101177">התקשרי עכשיו</a>
         <a class="btn" href="https://wa.me/972525101177">וואטסאפ</a>
         <a class="btn" href="mailto:lolafriat1177@gmail.com">מייל</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=%D7%93%D7%95%D7%93+%D7%A6%D7%91%D7%99+%D7%A4%D7%A0%D7%A7%D7%A1%2C+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D" target="_blank" rel="noopener">נווט עכשיו</a>
       </nav>
     </header>
 
@@ -122,6 +129,7 @@
       <p>כאן תמצאו את הקישורים הרשמיים: אינסטגרם, קביעת תור, ניווט ויצירת קשר.</p>
       <div class="btn-row">
         <a class="btn btn-cta" href="https://lee.co.il/b/oNB94?branch=0" aria-label="קביעת תור עכשיו">קביעת תור</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=%D7%93%D7%95%D7%93+%D7%A6%D7%91%D7%99+%D7%A4%D7%A0%D7%A7%D7%A1%2C+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D" target="_blank" rel="noopener">נווט עכשיו</a>
         <a class="btn" href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a>
         <a class="btn" href="https://easy.co.il/page/10152948">Easy</a>
         <a class="btn" href="price.html">מחירון</a>
@@ -145,7 +153,12 @@
 
     <section class="card">
       <h2>איך מגיעים</h2>
-      <iframe class="map" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=%D7%93%D7%95%D7%93+%D7%A6%D7%91%D7%99+%D7%A4%D7%A0%D7%A7%D7%A1,+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D&output=embed" style="width:100%;height:280px;border:0;border-radius:14px"></iframe>
+      <div id="map-container" style="width:100%">
+        <div id="map-placeholder" class="map-ph" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border:1px dashed #f9c6cf;border-radius:14px;color:#6b7280">
+          <span>כדי להציג את המפה יש לאשר שימוש בעוגיות צד ג׳ (Google Maps).</span>
+          <button id="enable-map" class="btn">הצגת מפה</button>
+        </div>
+      </div>
     </section>
 
     <section class="card">
@@ -156,7 +169,7 @@
     <footer>
       © <span id="year"></span> לולי נייל • מס׳ עוסק: 208489344 • <a href="https://www.instagram.com/luli_makeup.hair?igsh=NGd3bmFqZWNmMTk0">Instagram</a> • <a href="https://lee.co.il/b/oNB94?branch=0">Lee</a> • <a href="https://easy.co.il/page/10152948">Easy</a>
     </footer>
-    <div style="text-align:center;color:#6b7280;font-size:.9rem;margin-bottom:18px">צור קשר: <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a></div>
+    <div style="text-align:center;color:#6b7280;font-size:.9rem;margin-bottom:8px">צור קשר: <a href="mailto:lolafriat1177@gmail.com">lolafriat1177@gmail.com</a> • <a href="#" id="manage-consent" style="text-decoration:underline">ניהול הסכמה לעוגיות</a></div>
   <button id="open-a11y-fab" class="a11y-fab" aria-label="אפשרויות נגישות">נגישות</button>
   <dialog id="a11y" style="max-width:850px; border:1px solid #ffd2de; border-radius:20px; padding:0">
     <form method="dialog" style="margin:0">
@@ -178,8 +191,42 @@
       </footer>
     </form>
   </dialog>
+  <!-- Cookie/consent banner for third‑party services -->
+  <div id="cookie-banner" style="position:fixed; inset-inline:12px; bottom:12px; max-width:760px; margin-inline:auto; z-index:50; background:#ffffff; border:1px solid #ffd2de; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:12px 14px; display:none">
+    <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+      <div style="text-align:right">
+        אנחנו משתמשים בשירותי צד ג׳ (למשל Google Maps, Lee, Instagram). נאשר/נדחה שימוש בעוגיות לצורך הצגת תוכן ושיפור חווייה. קראו את ההסבר בחלון הנגישות/מדיניות.
+      </div>
+      <div style="display:flex; gap:8px">
+        <button id="cookie-decline" class="btn">דחייה</button>
+        <button id="cookie-accept" class="btn btn-cta" style="animation:none">אישור</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
+    // Consent banner & third‑party loading control
+    const banner = document.getElementById('cookie-banner');
+    const pref = localStorage.getItem('cookie-pref');
+    const mapURL = 'https://www.google.com/maps?q=%D7%93%D7%95%D7%93+%D7%A6%D7%91%D7%99+%D7%A4%D7%A0%D7%A7%D7%A1,+%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D&output=embed';
+    const mapContainer = document.getElementById('map-container');
+    const mapPlaceholder = document.getElementById('map-placeholder');
+    function loadMap(){
+      if(!mapContainer) return;
+      mapContainer.innerHTML = '<iframe class="map" loading="lazy" allowfullscreen src="'+mapURL+'" style="width:100%;height:280px;border:0;border-radius:14px"></iframe>';
+    }
+    function showBanner(){ if(banner) banner.style.display = 'block'; }
+    if(!pref){ showBanner(); } else if(pref==='accepted'){ loadMap(); }
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    acceptBtn && (acceptBtn.onclick = ()=>{ localStorage.setItem('cookie-pref','accepted'); banner.style.display='none'; loadMap(); });
+    declineBtn && (declineBtn.onclick = ()=>{ localStorage.setItem('cookie-pref','declined'); banner.style.display='none'; });
+    const manage = document.getElementById('manage-consent');
+    manage && (manage.onclick = (e)=>{ e.preventDefault(); localStorage.removeItem('cookie-pref'); showBanner(); });
+    const enableMap = document.getElementById('enable-map');
+    enableMap && (enableMap.onclick = ()=>{ localStorage.setItem('cookie-pref','accepted'); if(banner) banner.style.display='none'; loadMap(); });
+
     // a11y modal + tools
     const a11y = document.getElementById('a11y');
     document.getElementById('open-a11y-fab').addEventListener('click', ()=> a11y.showModal());
